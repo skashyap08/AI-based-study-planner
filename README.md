@@ -50,7 +50,10 @@ Managing study time effectively is a challenge for many students. This project s
 
 ## 📂 Project Structure
 
-```ai-study-planner/
+## 📂 Project Structure
+
+<pre>
+ai-study-planner/
 │
 ├── app.py
 ├── requirements.txt
@@ -58,18 +61,18 @@ Managing study time effectively is a challenge for many students. This project s
 ├── .gitignore
 │
 ├── backend/
-│ └── scheduler.py
+│   └── scheduler.py
 │
 ├── database/
-│ └── db.sql
+│   └── db.sql
 │
 ├── templates/
-│ ├── index.html
-│ └── dashboard.html
+│   ├── index.html
+│   └── dashboard.html
 │
 ├── static/
-│ └── style.css```
-
+│   └── style.css
+</pre>
 ## 📸 Sample Output
 -Day 1 - Math (2 hrs)
 -Day 2 - Physics (1 hr)
