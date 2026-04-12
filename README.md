@@ -49,7 +49,8 @@ Managing study time effectively is a challenge for many students. This project s
 ---
 
 ## 📂 Project Structure
-ai-study-planner/
+
+```ai-study-planner/
 │
 ├── app.py
 ├── requirements.txt
@@ -67,12 +68,12 @@ ai-study-planner/
 │ └── dashboard.html
 │
 ├── static/
-│ └── style.css
+│ └── style.css```
 
 ## 📸 Sample Output
-Day 1 - Math (2 hrs)
-Day 2 - Physics (1 hr)
-Day 3 - Chemistry (2 hrs)
+-Day 1 - Math (2 hrs)
+-Day 2 - Physics (1 hr)
+-Day 3 - Chemistry (2 hrs)
 
 ## 💡 Learning Outcomes
 1. Understanding of AI-based scheduling
@@ -81,11 +82,11 @@ Day 3 - Chemistry (2 hrs)
 4. Version control using Git
 
 ## 🎯 Future Enhancements
-🚀 Add login & authentication
-📊 Progress tracking dashboard
-🤖 Machine Learning-based predictions
-📱 Mobile responsive UI
-⏱️ Pomodoro timer integration
+- Add login & authentication
+- Progress tracking dashboard
+- Machine Learning-based predictions
+- Mobile responsive UI
+- Pomodoro timer integration
 
 👤Author
 Sakshi
