@@ -50,8 +50,6 @@ Managing study time effectively is a challenge for many students. This project s
 
 ## 📂 Project Structure
 
-## 📂 Project Structure
-
 <pre>
 ai-study-planner/
 │
@@ -74,9 +72,9 @@ ai-study-planner/
 │   └── style.css
 </pre>
 ## 📸 Sample Output
--Day 1 - Math (2 hrs)
--Day 2 - Physics (1 hr)
--Day 3 - Chemistry (2 hrs)
+- Day 1 - Math (2 hrs)
+- Day 2 - Physics (1 hr)
+- Day 3 - Chemistry (2 hrs)
 
 ## 💡 Learning Outcomes
 1. Understanding of AI-based scheduling
@@ -91,5 +89,5 @@ ai-study-planner/
 - Mobile responsive UI
 - Pomodoro timer integration
 
-👤Author
-Sakshi
+## 👤Author
+## Sakshi
