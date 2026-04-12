@@ -69,18 +69,18 @@ ai-study-planner/
 ├── static/
 │ └── style.css
 
-📸 Sample Output
+## 📸 Sample Output
 Day 1 - Math (2 hrs)
 Day 2 - Physics (1 hr)
 Day 3 - Chemistry (2 hrs)
 
-💡 Learning Outcomes
+## 💡 Learning Outcomes
 1. Understanding of AI-based scheduling
 2. Full-stack web development
 3. Database integration
 4. Version control using Git
 
-🎯 Future Enhancements
+## 🎯 Future Enhancements
 🚀 Add login & authentication
 📊 Progress tracking dashboard
 🤖 Machine Learning-based predictions
