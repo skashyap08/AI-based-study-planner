@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+</head>
+<body>
+    <h1>Your Study Plan</h1>
+
+    <ul>
+        {% for item in schedule %}
+            <li>{{ item.day }} - {{ item.subject }} ({{ item.time }} hrs)</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Go Back</a>
+</body>
+</html>
