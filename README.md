@@ -51,7 +51,7 @@ Managing study time effectively is a challenge for many students. This project s
 ## 📂 Project Structure
 
 <pre>
-ai-study-planner/
+AI-study-planner/
 │
 ├── app.py
 ├── requirements.txt
