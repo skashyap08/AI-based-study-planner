@@ -1,48 +1,87 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 import mysql.connector
 from backend.scheduler import generate_schedule
+from datetime import datetime
 
 app = Flask(__name__)
 
-# Connect MySQL
-db = mysql.connector.connect(
-    host="localhost",   # important
-    user="root",
-    password="root123",
-    database="study_planner"
-)
+# Database connection function
+def get_db_connection():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root123",
+        database="study_planner"
+    )
 
-cursor = db.cursor()
 
+# Home route
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/generate', methods=['POST'])
-def generate():
-    subjects = []
 
-    names = request.form.getlist('name')
-    difficulties = request.form.getlist('difficulty')
-    hours = request.form.getlist('hours')
+# Add Task
+@app.route('/add_task', methods=['POST'])
+def add_task():
+    try:
+        data = request.get_json()
 
-    for i in range(len(names)):
-        subject = {
-            "name": names[i],
-            "difficulty": int(difficulties[i]),
-            "hours": int(hours[i])
-        }
-        subjects.append(subject)
+        if not data:
+            return jsonify({"error": "No data received"}), 400
 
-        cursor.execute(
-            "INSERT INTO subjects (name, difficulty, hours) VALUES (%s, %s, %s)",
-            (names[i], difficulties[i], hours[i])
-        )
-        db.commit()
+        conn = get_db_connection()
+        cursor = conn.cursor()
 
-    schedule = generate_schedule(subjects)
+        cursor.execute("""
+            INSERT INTO tasks (subject, topic, difficulty, deadline, status)
+            VALUES (%s, %s, %s, %s, %s)
+        """, (
+            data.get('subject'),
+            data.get('topic'),
+            int(data.get('difficulty')),
+            data.get('deadline'),
+            "pending"
+        ))
 
-    return render_template('dashboard.html', schedule=schedule)
+        conn.commit()
+        conn.close()
 
+        return jsonify({"message": "Task added successfully"})
+
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({"error": str(e)}), 500
+
+
+#  Schedule Route (THIS WAS MISSING)
+@app.route('/schedule')
+def schedule():
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM tasks WHERE status='pending'")
+        tasks = cursor.fetchall()
+
+        conn.close()
+
+        if not tasks:
+            return jsonify([])
+
+        for t in tasks:
+            if isinstance(t['deadline'], str):
+                t['deadline'] = datetime.strptime(t['deadline'], "%Y-%m-%d").date()
+
+        sorted_tasks = generate_schedule(tasks)
+
+        return jsonify(sorted_tasks)
+
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({"error": str(e)}), 500
+
+
+# Run app
 if __name__ == '__main__':
     app.run(debug=True)
