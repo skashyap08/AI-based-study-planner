@@ -66,14 +66,27 @@ def schedule():
 
         conn.close()
 
+        print("Tasks:", tasks)  # DEBUG
+
         if not tasks:
             return jsonify([])
 
+        cleaned_tasks = []
+
         for t in tasks:
+            # skip bad data
+            if not t['deadline'] or not t['difficulty']:
+                continue
+
             if isinstance(t['deadline'], str):
                 t['deadline'] = datetime.strptime(t['deadline'], "%Y-%m-%d").date()
 
-        sorted_tasks = generate_schedule(tasks)
+            cleaned_tasks.append(t)
+
+        if not cleaned_tasks:
+            return jsonify([])
+
+        sorted_tasks = generate_schedule(cleaned_tasks)
 
         return jsonify(sorted_tasks)
 
