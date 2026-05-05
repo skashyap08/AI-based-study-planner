@@ -1,19 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
 <body>
 
-<div class="container">
-    <h1>📚 AI-Based Smart Study Planner</h1>
+<!-- Navbar -->
+<nav class="navbar">
+    <h2>📚 Study Planner</h2>
+    <span class="tag">AI Powered</span>
+</nav>
 
-    <div class="form">
-        <input id="subject" placeholder="Subject">
-        <input id="topic" placeholder="Topic">
-        <input id="difficulty" type="number" placeholder="Difficulty (1-5)">
-        <input id="deadline" type="date">
-        <button onclick="addTask()">Add Task</button>
+<div class="app-container">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>📊 Smart Study Dashboard</h1>
+        <p>Don't just study—strategize...</p>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+
+        <!-- Add Task Panel -->
+        <section class="card">
+            <h2>✏️ Add Study Task </h2>
+
+            <div class="form">
+                <label>Subject</label>
+                <input id="subject" placeholder="e.g. Data Structures">
+
+                <label>Topic</label>
+                <input id="topic" placeholder="e.g. Binary Trees">
+
+                <label>Difficulty</label>
+                <input id="difficulty" type="number" min="1" max="5" placeholder="1 (Easy) - 5 (Hard)">
+
+                <label>Deadline</label>
+                <input id="deadline" type="date">
+
+                <button onclick="addTask()">Add Task</button>
+            </div>
+        </section>
+
+        <!-- Schedule Panel -->
+        <section class="card">
+            <h2>🧠 AI Generated Schedule</h2>
+
+            <button class="generate-btn" onclick="getSchedule()">
+                Generate Smart Plan
+            </button>
+
+            <ul id="taskList"></ul>
+        </section>
+
     </div>
 
-    <button onclick="getSchedule()">Generate AI Schedule</button>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Smart Study Planner | Built with Flask + AI</p>
+    </footer>
 
-    <ul id="taskList"></ul>
 </div>
 
+<script src="/static/script.js"></script>
+
 </body>
+</html>
