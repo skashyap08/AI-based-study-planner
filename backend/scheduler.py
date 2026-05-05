@@ -3,7 +3,7 @@ from datetime import datetime
 def generate_schedule(tasks):
     today = datetime.today().date()
 
-    # ✅ Sort tasks by priority (difficulty + urgency)
+    # Sort tasks by priority (difficulty + urgency)
     sorted_tasks = sorted(
         tasks,
         key=lambda x: x['difficulty'] * (1 / ((x['deadline'] - today).days + 1)),
@@ -27,5 +27,4 @@ def generate_schedule(tasks):
 
         day += 1
 
-    return schedule
     return schedule

@@ -7,62 +7,58 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-    <h2>📚 Study Planner</h2>
-    <span class="tag">AI Powered</span>
-</nav>
+<div class="page-wrapper">
 
-<div class="app-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>📚 Study Planner</h2>
+        <span class="tag">AI Powered</span>
+    </nav>
 
-    <!-- Header -->
-    <header class="header">
-        <h1>📊 Smart Study Dashboard</h1>
-        <p>Don't just study-strategize..</p>
-    </header>
+    <div class="app-container">
 
-    <!-- Main Grid -->
-    <div class="main-grid">
+        <!-- Header -->
+        <header class="header">
+            <h1>Smart Study Dashboard</h1>
+            <p>Don't just study — strategize.</p>
+        </header>
 
-        <!-- Add Task Panel -->
-        <section class="card">
-            <h2>✏️ Add Study Task </h2>
+        <!-- Main Grid -->
+        <div class="main-grid">
 
-            <div class="form">
-                <label>Subject</label>
-                <input id="subject" placeholder="e.g. Data Structures">
+            <!-- Add Task -->
+            <section class="card">
+                <h2>➕ Add New Task</h2>
 
-                <label>Topic</label>
-                <input id="topic" placeholder="e.g. Binary Trees">
+                <div class="form">
+                    <label>Subject</label>
+                    <input id="subject" placeholder="e.g. Data Structures">
 
-                <label>Difficulty</label>
-                <input id="difficulty" type="number" min="1" max="5" placeholder="1 (Easy) - 5 (Hard)">
+                    <label>Topic</label>
+                    <input id="topic" placeholder="e.g. Trees">
 
-                <label>Deadline</label>
-                <input id="deadline" type="date">
+                    <label>Difficulty</label>
+                    <input id="difficulty" type="number" min="1" max="5">
 
-                <button onclick="addTask()">Add Task</button>
-                <button onclick="getSchedule()">Generate Smart Plan</button>
-            </div>
-        </section>
+                    <label>Deadline</label>
+                    <input id="deadline" type="date">
 
-        <!-- Schedule Panel -->
-        <section class="card">
-            <h2>🧠 AI Generated Schedule</h2>
+                    <button onclick="addTask()">Add Task</button>
+                </div>
+            </section>
 
-            <button class="generate-btn" onclick="getSchedule()">
-                Generate Smart Plan
-            </button>
+            <!-- Schedule -->
+            <section class="card">
+                <h2>🧠 AI Schedule</h2>
 
-            <ul id="taskList"></ul>
-        </section>
+                <button onclick="getSchedule()">Generate Plan</button>
+
+                <ul id="taskList"></ul>
+            </section>
+
+        </div>
 
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2026 Smart Study Planner | Built with Flask + AI</p>
-    </footer>
 
 </div>
 
