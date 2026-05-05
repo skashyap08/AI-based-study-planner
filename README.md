@@ -54,6 +54,7 @@ Managing study time effectively is a challenge for many students. This project s
 AI-study-planner/
 │
 ├── app.py
+├── db.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
