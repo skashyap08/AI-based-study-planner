@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Study Planner</title>
-</head>
 <body>
-    <h1>AI Study Planner</h1>
 
-    <form action="/generate" method="POST">
-        <div id="subjects">
-            <input name="name" placeholder="Subject">
-            <input name="difficulty" placeholder="Difficulty (1-5)">
-            <input name="hours" placeholder="Hours">
-        </div>
+<div class="container">
+    <h1>📚 AI-Based Smart Study Planner</h1>
 
-        <button type="submit">Generate Plan</button>
-    </form>
+    <div class="form">
+        <input id="subject" placeholder="Subject">
+        <input id="topic" placeholder="Topic">
+        <input id="difficulty" type="number" placeholder="Difficulty (1-5)">
+        <input id="deadline" type="date">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <button onclick="getSchedule()">Generate AI Schedule</button>
+
+    <ul id="taskList"></ul>
+</div>
+
 </body>
-</html>

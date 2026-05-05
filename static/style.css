@@ -1,4 +1,103 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
 body {
-    font-family: Arial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     text-align: center;
+    color: white;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs */
+.form input {
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Input Focus Effect */
+.form input:focus {
+    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Buttons */
+button {
+    margin-top: 12px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Button Hover */
+button:hover {
+    background: #ffdd57;
+    transform: scale(1.05);
+}
+
+/* Task List */
+#taskList {
+    margin-top: 20px;
+    list-style: none;
+}
+
+/* Task Item */
+#taskList li {
+    background: rgba(255,255,255,0.2);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+#taskList li:hover {
+    background: rgba(255,255,255,0.35);
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
 }
