@@ -152,7 +152,7 @@ button:hover {
     flex-direction: column;
     justify-content: center;  /* vertical center */
     align-items: center;      /* horizontal center */
-    height:auto;             /* adjust height */
+    height: 80vh;             /* adjust height */
     text-align: center;
 }
 
@@ -210,13 +210,10 @@ header h1 {
 
 /* Grid Layout - balanced spacing */
 .main-grid {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     align-items: start;
-     height: 100vh;          /* full screen */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 /* Cards - consistent height + spacing */
@@ -252,42 +249,4 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-/* === TEXT COLOR IMPROVEMENTS (COLOR NAMES) === */
-
-/* Main Heading */
-header h1 {
-    color: white;
-}
-
-/* Sub heading */
-.header p {
-    color: lightblue;
-}
-
-/* Card Heading */
-.card h2 {
-    color: skyblue;
-}
-
-/* Labels */
-.form label {
-    color: lightgray;
-}
-
-/* Input text */
-.form input {
-    color: black;
-}
-
-/* Placeholder */
-.form input::placeholder {
-    color: gray;
-}
-
-/* Buttons text */
-button {
-    color: darkslategray;
 }
