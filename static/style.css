@@ -1,20 +1,7 @@
-:root {
-    --bg-gradient: linear-gradient(135deg, #667eea, #764ba2);
-    --card-bg: rgba(255, 255, 255, 0.1);
-    --text-primary: #ffffff;
-    --text-secondary: #e0e7ff;
-    --accent: #60a5fa;
-    --button-primary: #2563eb;
-    --button-hover: #1d4ed8;
-}
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--bg-gradient);
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial;
+    text-align: center;
+    background: #f5f5f5;
 }
 
 .form input {
@@ -48,14 +35,12 @@ body {
 .container {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
+    padding: 30px;
     border-radius: 20px;
     width: 400px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     text-align: center;
     color: white;
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 20px;
 }
 
 /* Heading */
@@ -101,8 +86,8 @@ button {
 
 /* Button Hover */
 button:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
+    background: #ffdd57;
+    transform: scale(1.05);
 }
 
 /* Task List */
@@ -113,13 +98,12 @@ button:hover {
 
 /* Task Item */
 #taskList li {
+    background: rgba(255,255,255,0.2);
     margin: 8px 0;
+    padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
-    background: rgba(255,255,255,0.15);
-    padding: 12px;
-     color: var(--text-primary);
-    }
+}
 
 /* Hover Effect */
 #taskList li:hover {
@@ -139,10 +123,9 @@ button:hover {
     align-items: center;
     padding: 15px 40px;
     padding-left: 20px;
-    margin-bottom: 30px;
-    justify-content: space-between;
-    background: rgba(0,0,0,0.25);
-    border-radius: 12px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 /* Study Planner Title */
@@ -150,17 +133,15 @@ button:hover {
     font-size: 26px;        /* bigger size */
     font-weight: 700;
     margin-left: 20px;      /* pushes slightly to right */
-    color: var(--text-primary);
 }
 
 /* Tag stays right */
 .navbar .tag {
     margin-left: auto;      /* pushes it to right corner */
+    background: #4CAF50;
     padding: 6px 12px;
     border-radius: 8px;
     font-size: 12px;
-    background: #22c55e;
-    color: white;
 }
 
 /* Header */
@@ -174,12 +155,12 @@ button:hover {
     height: 80vh;             /* adjust height */
     text-align: center;
 }
+
 .header p {
     font-size: 20px;
     font-weight: 500;
     opacity: 0.9;
     margin-top: 5px;
-    color: var(--text-secondary);
 }
 
 /* Labels */
@@ -208,8 +189,6 @@ button:hover {
 /* Main Heading */
 header h1 {
     font-weight: 700;   /* strong */
-    font-size: 32px;
-    color: var(--text-primary);
 }
 
 /* Section Headings */
@@ -221,8 +200,6 @@ header h1 {
 /* Labels (slightly lighter) */
 .form label {
     font-weight: 500;
-    color: var(--text-secondary);
-    font-size: 13px;
 }
 /* App Container - center everything nicely */
 .app-container {
@@ -247,7 +224,6 @@ header h1 {
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     min-height: 350px; /* keeps symmetry */
-    color: var(--text-primary);
 }
 
 /* Form spacing */
@@ -260,22 +236,11 @@ header h1 {
 /* Inputs */
 .form input {
     padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
 }
 
 /* Button alignment */
 button {
     width: 100%;
-     padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: var(--button-primary);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
 /* Task list spacing */
