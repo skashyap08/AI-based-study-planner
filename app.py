@@ -1,17 +1,21 @@
 from flask import Flask, jsonify, render_template, request
 import mysql.connector
+import os
 from backend.scheduler import generate_schedule
 from datetime import datetime
 
 app = Flask(__name__)
 
 # Database connection function
+import os
+
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root123",
-        database="study_planner"
+        host=os.getenv("MYSQLHOST"),
+        user=os.getenv("MYSQLUSER"),
+        password=os.getenv("MYSQLPASSWORD"),
+        database=os.getenv("MYSQLDATABASE"),
+        port=int(os.getenv("MYSQLPORT"))
     )
 
 
