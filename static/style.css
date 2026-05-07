@@ -147,12 +147,11 @@ button:hover {
 /* Header */
 .header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;  /* vertical center */
     align-items: center;      /* horizontal center */
-    height: 80vh;             /* adjust height */
     text-align: center;
 }
 
@@ -249,4 +248,6 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
 }
