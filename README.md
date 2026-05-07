@@ -185,7 +185,9 @@ python app.py
 http://127.0.0.1:5000
 ```
 ## live demo: 
-- "ai-based-study-planner-production.up.railway.app"
+ ```text
+ai-based-study-planner-production.up.railway.app
+``` 
 ## 🔮 Future Improvements
 
 - AI recommendation engine
