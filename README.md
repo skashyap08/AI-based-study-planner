@@ -18,16 +18,17 @@ The project uses:
 
 ## ✨ Features
 
-✅ Smart timetable generation  
-✅ Priority-based scheduling (AI logic)  
-✅ Simple and clean user interface  
-✅ MySQL database integration  
-✅ Dynamic schedule display  
-✅ Add study tasks easily   
-✅ Priority-based task sorting  
-✅ Responsive modern UI  
-✅ Glassmorphism dashboard design    
-✅ Real-time task updates 
+- Smart timetable generation  
+- Priority-based scheduling (AI logic)  
+- Simple and clean user interface  
+- MySQL database integration  
+- Dynamic schedule display  
+- Add study tasks easily  
+- Priority-based task sorting  
+- Responsive modern UI  
+- Glassmorphism dashboard design  
+- Real-time task updates  
+
 ---
 
 ## 🧠 How It Works
@@ -91,13 +92,6 @@ AI-study-planner/
 3. Database integration
 4. Version control using Git
 
-## 🎯 Future Enhancements
-- Add login & authentication
-- Progress tracking dashboard
-- Machine Learning-based predictions
-- Mobile responsive UI
-- Pomodoro timer integration
-
 --- 
 ## 🧠 How Priority Works
 
@@ -131,7 +125,7 @@ OS - Deadlocks | Priority: 2.10
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/AI-based-study-planner.git
+git clone https://github.com/skashyap08/AI-based-study-planner.git
 ```
 
 ---
