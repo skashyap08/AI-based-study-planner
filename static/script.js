@@ -26,27 +26,38 @@ function addTask() {
 
 
 function getSchedule() {
+
     fetch('/schedule')
-    .then(res => res.json())
-    .then(data => {
-        console.log("Schedule:", data); // DEBUG
 
-        const list = document.getElementById("taskList");
-        list.innerHTML = "";
+    .then(async response => {
 
-        if (data.length === 0) {
-            list.innerHTML = "<li>No tasks found</li>";
-            return;
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Schedule fetch failed");
         }
 
+        const taskList = document.getElementById("taskList");
+        taskList.innerHTML = "";
+
         data.forEach(task => {
+
             const li = document.createElement("li");
-            li.innerText = `${task.subject} - ${task.topic} | Priority: ${task.priority.toFixed(2)}`;
-            list.appendChild(li);
+
+            li.innerHTML = `
+                <strong>${task.subject}</strong><br>
+                Topic: ${task.topic}<br>
+                Deadline: ${task.deadline}<br>
+                Priority: ${task.priority}
+            `;
+
+            taskList.appendChild(li);
         });
+
     })
-    .catch(err => {
-        console.error("Error:", err);
-        alert("Error fetching schedule");
+
+    .catch(error => {
+        console.error(error);
+        alert("Error: " + error.message);
     });
 }
