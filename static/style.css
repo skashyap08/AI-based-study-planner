@@ -46,8 +46,11 @@ body {
 /* Heading */
 h1 {
     margin-bottom: 20px;
-    font-size: 28px;
     letter-spacing: 1px;
+     font-size: clamp(28px, 5vw, 42px);
+}
+h2 {
+    font-size: clamp(20px, 3vw, 28px);
 }
 
 /* Form */
@@ -205,24 +208,31 @@ header h1 {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    width: 90%;
+    max-width: 1200px;
 }
 
 /* Grid Layout - balanced spacing */
 .main-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
     align-items: start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+
 }
 
 /* Cards - consistent height + spacing */
 .card {
     background: rgba(255, 255, 255, 0.08);
-    padding: 25px;
-    border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     min-height: 350px; /* keeps symmetry */
+    width: 100%;
+    padding: 25px;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
 
 /* Form spacing */
@@ -240,6 +250,7 @@ header h1 {
 /* Button alignment */
 button {
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* Task list spacing */
@@ -250,4 +261,32 @@ button {
     gap: 10px;
     max-height: 250px;
     overflow-y: auto;
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }
