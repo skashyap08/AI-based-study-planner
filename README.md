@@ -165,7 +165,7 @@ Update your MySQL credentials inside `app.py`:
 ```python
 host="localhost"
 user="root"
-password="y"
+password="root123"
 database="study_planner"
 ```
 
