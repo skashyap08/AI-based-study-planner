@@ -1,4 +1,4 @@
-# 📚 AI-Based Smart Study Planner
+# 📚 AI-Based Study Planner
 
 An intelligent web application that helps students **automatically generate optimized study schedules** based on subject difficulty, available time, and priorities.
 
