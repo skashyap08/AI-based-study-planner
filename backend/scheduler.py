@@ -1,12 +1,28 @@
 from datetime import datetime
 
+
 def generate_schedule(tasks):
+
     today = datetime.today().date()
 
-    # Sort tasks by priority (difficulty + urgency)
+    # Calculate priority safely
+    for task in tasks:
+
+        days_left = (task['deadline'] - today).days
+
+        # Prevent negative or zero issue
+        if days_left < 0:
+            days_left = 0
+
+        task['priority'] = round(
+            task['difficulty'] * (1 / (days_left + 1)),
+            2
+        )
+
+    # Sort by priority
     sorted_tasks = sorted(
         tasks,
-        key=lambda x: x['difficulty'] * (1 / ((x['deadline'] - today).days + 1)),
+        key=lambda x: x['priority'],
         reverse=True
     )
 
@@ -14,7 +30,11 @@ def generate_schedule(tasks):
     day = 1
 
     for task in sorted_tasks:
+
         days_left = (task['deadline'] - today).days
+
+        if days_left < 0:
+            days_left = 0
 
         schedule.append({
             "day": f"Day {day}",
@@ -22,7 +42,7 @@ def generate_schedule(tasks):
             "topic": task['topic'],
             "deadline": str(task['deadline']),
             "days_left": days_left,
-            "priority": round(task['difficulty'] * (1 / (days_left + 1)), 2)
+            "priority": task['priority']
         })
 
         day += 1
